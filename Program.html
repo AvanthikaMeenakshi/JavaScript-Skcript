@@ -1,10 +1,8 @@
 <html>
 	<body>
-
 	Some text here:
 	<input type ="text" id="someText">
 	<button onclick ="Display()">Enter into table </button>
-
 	<p id="new">
 		<table id="thisTable"> 
 			<thead><tr>
@@ -14,17 +12,7 @@
 		</table>
 		<br>
 	</p>
-
-	<script>
-		function Display(){
-			var x = document.getElementById('someText').value;
-	
-			var table=document.getElementById('thisTable');
-			var row = table.insertRow(-1);
-			var cell = row.insertCell(-1);
-
-			row.innerHTML= x;
-		}
-	</script>
-	</body>
+	<script src = "Scrpt.js" type="text/javascript">
+</script>
+</body>
 </html>
