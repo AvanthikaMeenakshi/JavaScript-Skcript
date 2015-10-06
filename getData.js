@@ -1,11 +1,11 @@
-$(document).click(function()
+$("#MyBtn").click(function(event)
 { 
-	var req = $.ajax({
-		type: "GET",
-		url: "http://api.openweathermap.org/data/2.5/weather?q={chennai}",
+		var req = $.ajax({
+		url: "http://api.openweathermap.org/data/2.5/weather?q=chennai",
 		dataType: "JSON"
 	});
-console.log('the result is', +req);
+	$("#demo").html(event.result);
+	table.append('<tr><td>' + req + '</td></tr>');
 });
 
 

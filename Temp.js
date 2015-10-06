@@ -1,4 +1,4 @@
-$("#myBtn").click( function(event)
+$("#myBtn").click(function(event)
 {
 		event.preventDefault();
 		var city = $('#someText').val();
@@ -17,5 +17,5 @@ $("#myBtn").click( function(event)
 		});
 		
 });
-//alert( "Handler for .submit() called." );
+//alert( "Handler for .click() called." );
 //});
