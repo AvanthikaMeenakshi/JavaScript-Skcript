@@ -1,0 +1,17 @@
+body 
+{
+	background-color: lightyellow;
+}
+button
+{
+	background-color: pink;
+}
+table, th, tr, thead
+{
+	border: 1px;
+	border-color: #000000;
+}
+th 
+{
+	height: 50px
+}
