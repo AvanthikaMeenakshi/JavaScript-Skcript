@@ -2,7 +2,7 @@ $("#myBtn").click( function(event)
 {
 		event.preventDefault();
 		var city = $('#someText').val();
-		var table= $('#thisTable');
+		var table = $('#thisTable');
 		$.ajax({
 			method: "POST",
 			url: "http://api.openweathermap.org/data/2.5/weather?q="+city+"&units=metric",
@@ -15,7 +15,4 @@ $("#myBtn").click( function(event)
 				alert("404 not found");
 			}
 		});
-		
 });
-//alert( "Handler for .submit() called." );
-//});
