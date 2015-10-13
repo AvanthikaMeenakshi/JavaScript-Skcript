@@ -1,7 +1,55 @@
+html,body{
+	margin:0;
+	padding: 0;
+}
+nav{
+	float: right;
+	margin-right:15px;
+}
+
+a{
+	color: #FFFFFF;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	text-decoration: none;
+}
+
+a:hover{
+	text-decoration: underline;
+}
+
+ul,li{
+	display: inline-block;
+	text-align: center;
+	margin: 5px;
+	padding: 0;
+}
+header{
+	background-color: #848484;
+	width: 100%;
+}
+
+img{
+	display: inline-block;
+}
+
+h2 {
+	font-family: "Times New Roman", Times, serif;
+	position: absolute; 
+   	top: 200px; 
+   	left: 0; 
+   	width: 100%; 
+
+}
+
+.container{
+width: 1024px;
+margin: 0 auto;
+}
+
 .division{
-	position: relative;
-    padding: 10px 20px;
-    background-color: #EEEEEE;
-    border-right : 2px solid black;
-    border-bottom: 50px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	margin-right: 50px;
+	margin-left: 50px;
 }
