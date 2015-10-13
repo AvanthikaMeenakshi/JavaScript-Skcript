@@ -35,8 +35,11 @@ img{
 
 h2 {
 	font-family: "Times New Roman", Times, serif;
+	font-style: inherit;
+	font-size: 100;
+	color: #FFFFFF;
 	position: absolute; 
-   	top: 200px; 
+   	top: 0px; 
    	left: 0; 
    	width: 100%; 
 
