@@ -1,30 +1,30 @@
 <html>
 <script type="text/javascript" src="checkForm.js"></script>
+<script type="text/javascript" src="RemoveError.js"></script>
 <link rel="stylesheet" type="text/css" href="error.css">
 <form action="mailto:me@fakeemail.com" onsubmit="checkThis()">
   <fieldset>
     <legend>Personal details</legend>
     <p>
-      <script type="text/javascript" src="hideError.js"></script>
       <label>
         Full name:
-        <input type="text" name="fullname" id="fullname">
+        <input type="text" name="fullname" id="fullname" oninput="removeP()">
       </label>
     </p>
     <p class="errormsg" id="nameerrormsg">Please enter your name above</p>
     <p>
       <label>
         Street Address:
-        <input type="text" name="streetaddr" id="streetaddr">
+        <input type="text" name="streetaddr" id="streetaddr" oninput="removeP()">
       </label>
     </p>
     <p class="errormsg" id="addrerrormsg">Please enter your street address</p>
     <label>
-      Quantity: <input type="text" name="quantity" id="quantity">
-    </label>
-    <label>
-      Postcode: <input type="number" name="postcode" id="postcode" maxlength="8"></label>
+      Postcode: <input type="text" name="postcode" id="postcode" size="8" maxlength="8" oninput="removeP()"></label>
+      <p class="errormsg" id="posterrormsg">PostCode Cannot be left blank</p>
+    <label>Email: <input type="text" name="email" id="email" oninput="validateEmail" ></label>
   </fieldset>
-  <input type="submit" value="Submit it!"> 
+  <input type="submit" value="Submit it!" id="mySub"> 
+  <p class="errormsg" id="posterrormsg">Email Cannot be left blank</p>
 </form>
 </html>
