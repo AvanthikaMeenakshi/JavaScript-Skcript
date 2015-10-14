@@ -1,0 +1,30 @@
+<html>
+<script type="text/javascript" src="checkForm.js"></script>
+<link rel="stylesheet" type="text/css" href="error.css">
+<form action="mailto:me@fakeemail.com" onsubmit="checkThis()">
+  <fieldset>
+    <legend>Personal details</legend>
+    <p>
+      <script type="text/javascript" src="hideError.js"></script>
+      <label>
+        Full name:
+        <input type="text" name="fullname" id="fullname">
+      </label>
+    </p>
+    <p class="errormsg" id="nameerrormsg">Please enter your name above</p>
+    <p>
+      <label>
+        Street Address:
+        <input type="text" name="streetaddr" id="streetaddr">
+      </label>
+    </p>
+    <p class="errormsg" id="addrerrormsg">Please enter your street address</p>
+    <label>
+      Quantity: <input type="text" name="quantity" id="quantity">
+    </label>
+    <label>
+      Postcode: <input type="number" name="postcode" id="postcode" maxlength="8"></label>
+  </fieldset>
+  <input type="submit" value="Submit it!"> 
+</form>
+</html>

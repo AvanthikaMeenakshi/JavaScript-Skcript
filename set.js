@@ -9,6 +9,5 @@ function setHomeAddress(){
 	{
 	document.getElementById("homeaddress").disabled = false;
 	}
-	
 }
 
