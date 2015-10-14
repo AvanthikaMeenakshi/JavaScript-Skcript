@@ -9,6 +9,5 @@ obj = JSON.parse(text);
 document.getElementById("myWeather").innerHTML =
 obj.coord.lon+ " " + obj.coord.lat + " " + obj.weather.id + " " + obj.weather.main + "" + obj.weather.description + "" + obj.weather.icon + " " + obj.main.temp +""+ obj.main.pressure +""+ obj.main.humidity +""+ ;
 </script>
-
 </body>
 </html>
