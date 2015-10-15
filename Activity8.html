@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+  <head>
+    <title>Javascript challenge 10</title>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript">
+      $("#emailpara").ready(function() 
+      {
+        $("#emailpara").hide();
+      });
+
+       $("#subscribe").click(function()
+        {
+          if($("#subscribe").prop('checked') == true)
+            {
+                $("#emailpara").show("slow");
+            }
+          else
+            {
+                $("#emailpara").hide("slow");
+            }
+        });
+    </script>
+
+  </head>
+  <body>
+    <h1>Testing jQuery</h1>
+    <form action="mailto:me@example.com" method="post">
+      <fieldset>
+        <legend>Email subscriptions</legend>
+
+        <p id="subscribepara">
+          <label>
+            <input type="checkbox" name="subscribe" id="subscribe">
+            Yes! I would like to receive the occasional newsletter via email
+          </label>
+        </p>
+
+        <p id="emailpara">
+          <label>
+            Email Address:
+            <input type="text" name="email" id="email">
+          </label>
+        </p>
+
+      </fieldset>
+    </form>
+  </body>
+</html>
