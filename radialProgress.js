@@ -1,5 +1,5 @@
 function radialProgress(parent) {
-    var _data=null,
+    var _data= [],
         _duration= 1000,
         _selection,
         _margin = {top:0, right:0, bottom:30, left:0},
@@ -13,7 +13,9 @@ function radialProgress(parent) {
         _minValue = 0,
         _maxValue = 100;
 
-    var  _currentArc= 0, _currentArc2= 0, _currentValue=0;
+    var  _currentArc= 0, _currentArc2= 0, _currentArc3= 0, _currentValue=0;
+    _data.push(_arc);
+    _data.push(_arc2);
 
     var _arc = d3.svg.arc()
         .startAngle(0 * (Math.PI/180)); //just radians
@@ -22,11 +24,15 @@ function radialProgress(parent) {
         .startAngle(0 * (Math.PI/180))
         .endAngle(0); //just radians
 
+    var _arc3 = d3.svg.arc()
+          .startAngle(0*(Math.PI/180))
+          .endAngle(0);
+
 
     _selection=d3.select(parent);
 
-
-    function component() {
+          
+        function component() {
 
         _selection.each(function (data) {
 
@@ -80,6 +86,11 @@ function radialProgress(parent) {
                 .attr("transform", "translate(" + _width/2 + "," + _width/2 + ")")
                 .attr("d", _arc2);
 
+            var path3 = svg.select(".arcs").selectAll(".arc3").data(data);
+            path3.enter().append("path")
+                .attr("class","arc3")
+                .attr("transform","translate("+ _width/2 + "," + _width/2 +")")
+                .attr("d",_arc3);
 
             enter.append("g").attr("class", "labels");
             var label = svg.select(".labels").selectAll(".label").data(data);
@@ -96,7 +107,7 @@ function radialProgress(parent) {
 
             path.exit().transition().duration(500).attr("x",1000).remove();
 
-
+ 
             layout(svg);
 
             function layout(svg) {
@@ -104,7 +115,7 @@ function radialProgress(parent) {
                 var ratio=(_value-_minValue)/(_maxValue-_minValue);
                 var endAngle=Math.min(360*ratio,360);
                 endAngle=endAngle * Math.PI/180;
-
+               // alert(ratio);
                 path.datum(endAngle);
                 path.transition().duration(_duration)
                     .attrTween("d", arcTween);
@@ -114,6 +125,15 @@ function radialProgress(parent) {
                     path2.transition().delay(_duration).duration(_duration)
                         .attrTween("d", arcTween2);
                 }
+
+                if(ratio > 5)
+                {
+                    path3.datum(Math.min(360*(ratio-0),360) * Math.PI/180);
+                     path3.transition().delay(_duration).duration(_duration)
+                         .attrTween("d", arcTween3);
+                }
+
+                
 
                 label.datum(Math.round(ratio*100));
                 label.transition().duration(_duration)
@@ -157,6 +177,13 @@ function radialProgress(parent) {
         };
     }
 
+    function arcTween3(a) {
+          var i = d3.interpolate(_currentArc3, a);
+
+          return function(t) {
+              return _arc3.endAngle(i(t))();
+            };
+        }
 
     function measure() {
         _width=_diameter - _margin.right - _margin.left - _margin.top - _margin.bottom;
@@ -166,8 +193,9 @@ function radialProgress(parent) {
         _arc.innerRadius(_width/2 * .85);
         _arc2.outerRadius(_width/2 * .85);
         _arc2.innerRadius(_width/2 * .85 - (_width/2 * .15));
+        _arc3.outerRadius(_width/2 * .85 - (_width/2 * .15));
+        _arc3.innerRadius(_width/2 * .75 - (_width/2 * .15));
     }
-
 
     component.render = function() {
         measure();
@@ -226,5 +254,4 @@ function radialProgress(parent) {
     }
 
     return component;
-
 }

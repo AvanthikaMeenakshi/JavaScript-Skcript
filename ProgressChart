@@ -1,0 +1,5 @@
+<html>
+<input id="inputVal" type="text" value="0.75" style="width:30px;"/>
+<button id="reload">Set</button>
+<div class="completion-chart"></div>
+</html>

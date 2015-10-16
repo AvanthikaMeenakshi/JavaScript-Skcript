@@ -24,6 +24,11 @@
     fill: #3660b0;
 }
 
+.arc3 {
+    stroke-weight:0.1;
+    fill: #00FFFF;
+}
+
 
 .label {
     font-family:  Myriad, "Helvetic Neue", Helvetica, Arial;
