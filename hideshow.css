@@ -1,0 +1,11 @@
+function checkThis(event){
+	var nameText = document.getElementById("myUserName");
+	var password1 = document.getElementById("myPwd");
+
+	if (nameText.value >= 2)
+	{
+		document.getElementById("myUserName").style.visibility = 'hidden' ;
+		document.getElementById("myPwd").style.visibility = 'visible' ;
+		password1.focus();
+		event.preventDefault();
+	}

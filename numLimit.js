@@ -1,7 +1,7 @@
 $("#addText").keyup(function () {
             var text = $(this).val();
             var textLength = text.length;
-            var maxLength = 100;
+            var maxLength = 120;
             if (textLength >= maxLength) {
                 $("#exceed").text(" You're about to exceed the limit ");;
             }

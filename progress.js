@@ -1,9 +1,9 @@
 var width = 370,
     height = 370,
     twoPi = 2 * Math.PI,
-    progress = 0,
+    progress = document.getElementById('inputVal').value,
     total = 1308573,
-    formatPercent = d3.format("g");
+    formatPercent = d3.format();
 
 var arc = d3.svg.arc()
     .startAngle(0)
@@ -14,7 +14,6 @@ var arc = d3.svg.arc()
 var svg = d3.select(".completion-chart").append("svg")
     .attr("width", width)
     .attr("height", height)
-
     .attr('fill', '#2E7AF9')
     .append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");

@@ -1,0 +1,52 @@
+.container
+{
+	border: solid 5px #808080;
+	background-color: #8999A5;
+	margin-right: 100px;
+	margin-left: 400px;
+	text-align: center;
+	height: 520px;
+	width: 420px;
+}
+
+#name
+{
+	text-align: center;
+	text-shadow: 2px 2px #fffff0;
+	font-size: 75px;
+	color: #FFFFFF;
+}
+
+#myPwd 
+{
+	vertical-align: middle;
+	border: solid 5px #808080;
+	width: 320px;
+	height: 80px;
+	visibility: hidden;
+
+}
+
+#myUserName
+{
+	vertical-align: middle;
+	border: solid 5px #808080;
+	width: 320px;
+	height: 80px;
+}
+
+#next
+{
+	vertical-align: middle;
+	width: 320px;
+	height: 80px;
+}
+
+#mySub
+{
+	visibility: hidden;
+	vertical-align: middle;
+	border: solid 5px #808080;
+	width: 320px;
+	height: 80px;
+}
