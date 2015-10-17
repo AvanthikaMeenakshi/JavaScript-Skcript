@@ -1,0 +1,56 @@
+.container 
+{ background:-moz-linear-gradient(top,#fff 0%, #ddd 100%);
+background:-webkit-linear-gradient(top,#fff 0%, #ddd 100%);
+background:linear-gradient(top,#fff 0%, #ddd 100%);	 
+filter:progId:DXImageTransform.Microsoft.gradient(startColorstr=#ffffff, endColorstr=#dddddd);
+border:10px solid #f80;
+border-radius:50%;
+height:70px;
+position:relative;
+text-align:center;
+width:70px;
+-webkit-backface-visibility:hidden; 
+} 
+
+.container span 
+{ 
+color:#555;display:inline-block;
+font:36px Arial,Helvetica,sans-serif;
+margin-top:12px; 
+}
+
+.score, .scoreFill, .notchTop, .notchBottom 
+{ 
+border-radius:50%;
+clip:rect(0px, 90px, 90px, 45px);
+height:70px;position:absolute;
+top:-10px;
+left:-10px;
+width:70px;
+-webkit-backface-visibility:hidden; }
+
+.score 
+{ 
+border:10px solid #f50; 
+}
+
+.scoreFill 
+{ 
+border:10px solid #f80;
+-webkit-transform:rotate(160deg);
+-moz-transform:rotate(160deg);-ms-transform:rotate(160deg); 
+} /* border color flexes depending on % */
+.notchTop 
+{ 
+border:10px solid #fff;
+-webkit-transform:rotate(-3deg);
+-moz-transform:rotate(-3deg);
+-ms-transform:rotate(-3deg); 
+}
+.notchBottom 
+{
+ border:10px solid #fff;
+ -webkit-transform:rotate(157deg);
+ -moz-transform:rotate(157deg);
+ -ms-transform:rotate(157deg); 
+ }

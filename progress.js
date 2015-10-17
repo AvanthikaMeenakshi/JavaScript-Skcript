@@ -2,7 +2,7 @@ var width = 370,
     height = 370,
     twoPi = 2 * Math.PI,
     progress = 0,
-    total = 0,
+    total = 1308573,
     formatPercent = d3.format("g");
 
 var arc = d3.svg.arc()
@@ -14,6 +14,7 @@ var arc = d3.svg.arc()
 var svg = d3.select(".completion-chart").append("svg")
     .attr("width", width)
     .attr("height", height)
+
     .attr('fill', '#2E7AF9')
     .append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
@@ -32,7 +33,7 @@ var text = meter.append("text")
     .attr("text-anchor", "middle");
 
 var text2 = meter.append("text")
-    .attr("y", 50)
+    .attr("y", 40)
     .attr("text-anchor", "middle")
     .attr("class", "text2");
 
@@ -40,7 +41,7 @@ text2.text('progress completed');
 
 var animate = function(percentage){
     var i = d3.interpolate(progress, percentage);
-      d3.transition().tween("progress", function() {
+    d3.transition().duration(1200).tween("progress", function () {
         return function (t) {
             progress = i(t);
             foreground.attr("d", arc.endAngle(twoPi * progress));
